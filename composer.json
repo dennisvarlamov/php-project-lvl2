@@ -1,0 +1,26 @@
+{
+    "name": "nglynis/php-project-lvl2",
+    "description": "my-second-project",
+    "homepage": "https://github.com/nglynis/php-project-lvl2.git",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "nglynis",
+            "email": "florida2013life@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    },
+    "scripts": {
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
+        "phpunit": "phpunit",
+        "test": "phpunit tests"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    }
+}
