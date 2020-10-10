@@ -11,6 +11,10 @@
             "role": "Developer"
         }
     ],
+    "bin": [
+        "bin/gendiff"
+    ],
+
     "require": {
         "docopt/docopt": "^1.0"
     },
@@ -19,6 +23,11 @@
         "phpcbf": "phpcbf",
         "phpunit": "phpunit",
         "test": "phpunit tests"
+    },
+    "autoload": 
+    { "files":  [
+                "src/Run.php"
+        ]
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "*"
