@@ -4,13 +4,13 @@ namespace Differ\Parser;
 
 use Symfony\Component\Yaml\Yaml;
 
-function    parse(string $fileData, string $fileFormat) : array
+function parse(string $fileData, string $fileFormat): array
 {
     switch ($fileFormat) {
-        case 'json' :
+        case 'json':
             return json_decode($fileData, true);
         case 'yaml':
-        case 'yml' :
+        case 'yml':
             return Yaml::parse($fileData);
         default:
             throw new \Esception("Format {$fileFormat} is not supported");
