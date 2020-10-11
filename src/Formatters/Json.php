@@ -2,7 +2,7 @@
 
 namespace Differ\Formatters\Json;
 
-function convertToJson(array $str): string
+function formatToJson(array $str): string
 {
     $formatJson = json_encode($str);
     
