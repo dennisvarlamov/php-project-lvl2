@@ -16,7 +16,8 @@
     ],
 
     "require": {
-        "docopt/docopt": "^1.0"
+        "docopt/docopt": "^1.0",
+        "funct/funct": "^1.5"
     },
     "scripts": {
         "phpcs": "phpcs",

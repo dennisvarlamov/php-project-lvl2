@@ -7,6 +7,20 @@ Diff Generator - program, that generate differences between two files. You can c
 Support Json and Yaml input formats and also generates differences in nested structures.
 You need too install Composer too use Diff Generator.
 
+```
+Generate diff
+
+    Usage:
+        gendiff (-h|--help)
+        gendiff (-v|--version)
+        gendiff [--format <fmt>] <firstFile> <secondFile>
+
+    Options:
+        -h --help                     Show this screen
+        -v --version                  Show version
+        --format <fmt>                Report format [default: pretty]
+```
+
 ## Install
 
 Type in command line:
