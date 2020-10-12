@@ -6,20 +6,20 @@ use Docopt;
 
 use function Differ\Differ\genDiff;
 
-function run()
+function run(): string
 {
     $doc = <<<DOC
-Generate diff
-
-    Usage:
-      gendiff (-h|--help)
-      gendiff (-v|--version)
-      gendiff [--format <fmt>] <firstFile> <secondFile>
+    Generate diff
     
+    Usage:
+        gendiff (-h|--help)
+        gendiff (-v|--version)
+        gendiff [--format <fmt>] <firstFile> <secondFile>
+
     Options:
-      -h --help                     Show this screen
-      -v --version                  Show version
-      --format <fmt>                Report format [default: pretty]
+        -h --help                     Show this screen
+        -v --version                  Show version
+        --format <fmt>                Report format [default: pretty]
 DOC;
 
     $argc = Docopt::handle($doc);
@@ -28,8 +28,8 @@ DOC;
     $secondFilePath = realpath($argc['<secondFile>']);
 
     try {
-        echo genDiff($firstFilePath, $secondFilePath, $argc['--format']);
-    } catch (\Exception $exseption) {
-        echo  $exseption->getMessage();
+        echo genDiff($firstFilePath, $secondFilePath, $args['--format']);
+    } catch (\Exception $exception) {
+        echo $exception->getMessage();
     }
 }
