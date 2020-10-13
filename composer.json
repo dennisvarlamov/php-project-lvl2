@@ -18,7 +18,8 @@
     "require": {
         "docopt/docopt": "^1.0",
         "funct/funct": "^1.5",
-        "symfony/yaml": "^5.1"
+        "symfony/yaml": "^5.1",
+        "phpunit/phpunit": "^9.4"
     },
     "scripts": {
         "phpcs": "phpcs",

@@ -2,7 +2,7 @@
 
 namespace Differ\Formatters\Pretty;
 
-use function Funct\Collection\strip;
+use function Funct\Strings\strip;
 
 const DEFAULT_INDENT = 4;
 
@@ -32,7 +32,7 @@ function formatElementToPretty(array $str, int $depth = 0): string
                 break;
             case 'unchanged':
                 $oldValue = getValueMap($value, $depth);
-                $currentElement =  "{$indent}{$key}: {$oldValue}";
+                $currentElement =  "{$indent}{$value}: {$oldValue}";
                 break;
             case 'deleted':
                 $element = getValueMap($value['element'], $depth);
@@ -49,7 +49,8 @@ function formatElementToPretty(array $str, int $depth = 0): string
         return $currentElement;
     }, $str);
 
-    return $renderDiff;
+    $result = implode("\n", $renderDiff);
+    return "{$result}";
 }
 
 function getValueMap($value, $depth)

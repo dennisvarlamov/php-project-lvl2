@@ -13,6 +13,6 @@ function parse(string $fileData, string $fileFormat): array
         case 'yml':
             return Yaml::parse($fileData);
         default:
-            throw new \Esception("Format {$fileFormat} is not supported");
+            throw new \Exception("Format {$fileFormat} is not supported");
     }
 }

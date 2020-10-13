@@ -15,13 +15,13 @@ function genDiff(string $firstFilePath, string $secondFilePath, string $format):
     }
 
     $firstFileFormat = pathinfo($firstFilePath, PATHINFO_EXTENSION);
-    $secondFileFormat = path_info($secondFilePath, PATHINFO_EXTENSION);
+    $secondFileFormat = pathinfo($secondFilePath, PATHINFO_EXTENSION);
 
-    $firstFileData = parse(file_get_contents($firstFilePath, $firstFileFormat));
-    $secondFileData = parse(file_get_contents($secondFilePath, $secondFileFormat));
-
+    $firstFileData = parse(file_get_contents($firstFilePath), $firstFileFormat);
+    $secondFileData = parse(file_get_contents($secondFilePath), $secondFileFormat);
+    //print_r($firstFileData);
+    print_r($secondFileData);
     $diffGen = generate($firstFileData, $secondFileData);
-
     switch ($format) {
         case 'json':
             $renderedDiff = formatToJson($diffGen);

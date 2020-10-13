@@ -4,7 +4,7 @@ namespace Differ\Formatters\Plain;
 
 use function Funct\Collection\flattenAll;
 use function Funct\Collection\compact;
-use function Funct\String\strip;
+use function Funct\Strings\strip;
 
 function formatToPlain(array $str): string
 {
@@ -22,7 +22,7 @@ function formatElementToPlain(array $str, string $path = ''): array
 
         switch ($value['status']) {
             case 'nested':
-                $result = convertToPlain($value['children'], "{$path}");
+                $result = formatElementToPlain($value['children'], "{$path}");
                 break;
             case 'changed':
                 $oldValue = getValueMap($value['old']);
