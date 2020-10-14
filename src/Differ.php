@@ -19,8 +19,7 @@ function genDiff(string $firstFilePath, string $secondFilePath, string $format):
 
     $firstFileData = parse(file_get_contents($firstFilePath), $firstFileFormat);
     $secondFileData = parse(file_get_contents($secondFilePath), $secondFileFormat);
-    //print_r($firstFileData);
-    print_r($secondFileData);
+    
     $diffGen = generate($firstFileData, $secondFileData);
     switch ($format) {
         case 'json':
@@ -28,6 +27,7 @@ function genDiff(string $firstFilePath, string $secondFilePath, string $format):
             break;
         case 'plain':
             $renderedDiff = formatToPlain($diffGen);
+            break;
         default:
             $renderedDiff = formatToPretty($diffGen);
     }
